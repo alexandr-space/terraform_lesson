@@ -12,7 +12,7 @@ provider "libvirt" {
 }
 provider "libvirt" {
   alias = "remote"
-  uri = "qemu+ssh://ak@10.177.7.195/system?known_hosts=/home/user/.ssh/known_hosts"
+  uri = "qemu+ssh://ak@10.177.7.195/system"
 }
 resource "libvirt_network" "terraform_network" {
   provider = libvirt.remote
