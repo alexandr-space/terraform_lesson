@@ -1,0 +1,12 @@
+Vm created
+akorchagin
+Пт ноя 22 16:30:52 MSK 2024
+Destruction is successful.
+Пт ноя 22 16:31:11 MSK 2024
+akorchagin
+vms_info = [
+  {
+    "vm_ip" = "10.10.10.241"
+    "vm_name" = "testing_VM-1"
+  },
+]
