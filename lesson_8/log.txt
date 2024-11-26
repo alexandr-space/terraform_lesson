@@ -1,12 +1,12 @@
-Vm created
+Config apply
+Вт ноя 26 18:34:49 MSK 2024
 akorchagin
-Пт ноя 22 16:30:52 MSK 2024
+VM created
+testing_VM-1
+10.10.10.231
 Destruction is successful.
-Пт ноя 22 16:31:11 MSK 2024
+Вт ноя 26 18:35:04 MSK 2024
 akorchagin
-vms_info = [
-  {
-    "vm_ip" = "10.10.10.241"
-    "vm_name" = "testing_VM-1"
-  },
-]
+VM removed
+testing_VM-1
+10.10.10.231
