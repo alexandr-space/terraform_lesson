@@ -24,46 +24,46 @@ resource "libvirt_domain" "vms" {
   }
 
   provisioner "local-exec" {
-   command = "echo 'Config apply' >> log.txt"
+    command = "echo 'Config apply' >> log.txt"
 }
   provisioner "local-exec" {
-   command = "date >> log.txt >> log.txt"
+    command = "date >> log.txt >> log.txt"
 }
   provisioner "local-exec" {
-   command = "whoami >> log.txt"
+    command = "whoami >> log.txt"
 }
   provisioner "local-exec" {
-   command = "echo 'VM created' >> log.txt"
+    command = "echo 'VM created' >> log.txt"
 }
   provisioner "local-exec" {
-   command = "echo ${self.name} >> log.txt"
+    command = "echo ${self.name} >> log.txt"
 }
   provisioner "local-exec" {
-   command = "echo ${self.network_interface.0.addresses.0} >> log.txt"
+    command = "echo ${self.network_interface.0.addresses.0} >> log.txt"
 }
   provisioner "local-exec" {
-   when = destroy
-   command = "echo 'Destruction is successful.' >> log.txt"
+    when = destroy
+    command = "echo 'Destruction is successful.' >> log.txt"
 }
   provisioner "local-exec" {
-   when = destroy
-   command = "date >> log.txt >> log.txt"
+    when = destroy
+    command = "date >> log.txt >> log.txt"
 }
   provisioner "local-exec" {
-   when = destroy
-   command = "whoami >> log.txt"
+    when = destroy
+    command = "whoami >> log.txt"
 }
   provisioner "local-exec" {
-   when = destroy
-   command = "echo 'VM removed' >> log.txt"
+    when = destroy
+    command = "echo 'VM removed' >> log.txt"
 }
   provisioner "local-exec" {
-   when = destroy
-   command = "echo ${self.name} >> log.txt"
+    when = destroy
+    command = "echo ${self.name} >> log.txt"
 }
   provisioner "local-exec" {
-   when = destroy
-   command = "echo ${self.network_interface.0.addresses.0} >> log.txt"
+    when = destroy
+    command = "echo ${self.network_interface.0.addresses.0} >> log.txt"
 }
 }
 
