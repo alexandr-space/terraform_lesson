@@ -1,12 +1,4 @@
-Config apply
-Вт ноя 26 18:47:14 MSK 2024
-akorchagin
-VM created
-testing_VM-1
-10.10.10.75
-Destruction is successful.
-Вт ноя 26 18:47:29 MSK 2024
-akorchagin
-VM removed
-testing_VM-1
-10.10.10.75
+Вт дек 10 16:37:42 MSK 2024: learning_VM-1 created by akorchagin. VM IP-adress: 10.100.100.144
+Вт дек 10 16:37:42 MSK 2024: learning_VM-2 created by akorchagin. VM IP-adress: 10.100.100.14
+Вт дек 10 16:38:06 MSK 2024: learning_VM-1 was destroy by akorchagin with terraform DESTROY command.
+Вт дек 10 16:38:06 MSK 2024: learning_VM-2 was destroy by akorchagin with terraform DESTROY command.

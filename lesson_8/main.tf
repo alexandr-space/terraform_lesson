@@ -24,47 +24,17 @@ resource "libvirt_domain" "vms" {
   }
 
   provisioner "local-exec" {
-    command = "echo 'Config apply' >> log.txt"
-}
-  provisioner "local-exec" {
-    command = "date >> log.txt >> log.txt"
-}
-  provisioner "local-exec" {
-    command = "whoami >> log.txt"
-}
-  provisioner "local-exec" {
-    command = "echo 'VM created' >> log.txt"
-}
-  provisioner "local-exec" {
-    command = "echo ${self.name} >> log.txt"
-}
-  provisioner "local-exec" {
-    command = "echo ${self.network_interface.0.addresses.0} >> log.txt"
-}
-  provisioner "local-exec" {
     when = destroy
-    command = "echo 'Destruction is successful.' >> log.txt"
-}
+    command = <<EOT
+      echo "$(date): ${self.name} was destroy by $(whoami) with terraform DESTROY command." >> log.txt
+    EOT
+ }
+
   provisioner "local-exec" {
-    when = destroy
-    command = "date >> log.txt >> log.txt"
-}
-  provisioner "local-exec" {
-    when = destroy
-    command = "whoami >> log.txt"
-}
-  provisioner "local-exec" {
-    when = destroy
-    command = "echo 'VM removed' >> log.txt"
-}
-  provisioner "local-exec" {
-    when = destroy
-    command = "echo ${self.name} >> log.txt"
-}
-  provisioner "local-exec" {
-    when = destroy
-    command = "echo ${self.network_interface.0.addresses.0} >> log.txt"
-}
+    command = <<EOT
+      echo "$(date): ${self.name} created by $(whoami). VM IP-adress: ${self.network_interface.0.addresses.0}" >> log.txt
+    EOT
+ }
 }
 
 resource "libvirt_pool" "terraform_pool" {
