@@ -12,13 +12,10 @@ provider "libvirt" {
 
 resource "libvirt_cloudinit_disk" "commoninit" {
   name  = "cmn_init-${var.vm_name}.iso"
-  user_data = data.template_file.user_data.rendered
+  user_data = templatefile("${path.module}/cloud-init.cfg", {hostname = "${var.vm_name}"})
 }
 
-data "template_file" "user_data" {
-  template  = local.read-cloud-cfg
-  
-  vars = {
-    hostname = "${var.vm_name}"
-  }
+output "vm_ip" {
+  value       = libvirt_domain.vm.network_interface[0].addresses.0
+  description = "IPs"
 }
