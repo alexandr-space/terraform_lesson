@@ -89,7 +89,14 @@ resource "opennebula_virtual_machine" "terraform_demo_vms" {
 
   SERVICEUSERVM = "1"
 }
-provisioner "local-exec" {
-    command = "echo ${self.ip}"
 }
+
+output "vms_info" {
+  description = "Get VM's name and ip"
+  value = [
+    for vm in opennebula_virtual_machine.terraform_demo_vms : {
+      vm_name = vm.name
+      vm_ip = vm.ip
+    }
+  ]
 }
